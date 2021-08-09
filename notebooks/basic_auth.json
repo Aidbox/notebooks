@@ -1,0 +1,98 @@
+{"name": "Basic Auth",
+ "description": "Basic Auth process containing steps that let's you create auth client and access policy, that guide you through authorization process",
+ "cells": [
+  {
+   "id": "97ecc03d-4b28-480d-ada0-55a00d692773",
+   "type": "markdown",
+   "value": "#Basic Auth\nThe simplest way to interact with Aidbox API from your confidential (backend) code is a Basic Auth.\n\nTo start you have to register in Aidbox Auth Client with secret and basic flow enabled\n\n",
+   "folded": {
+    "code": true,
+    "result": false
+   },
+   "result": "
+Basic Auth
+The simplest way to interact with Aidbox API from your confidential (backend) code is a Basic Auth.
+
+To start you have to register in Aidbox Auth Client with secret and basic flow enabled
+
+"
+  },
+  {
+   "id": "c0f4939d-8aa7-4912-aa8d-a2046f805af2",
+   "type": "rest",
+   "value": "PUT Client/basic?_pretty=trueRun REST Console\ncontent-type: text/yaml\naccept: text/yaml\n\nsecret: secret\ngrant_types:\n  - basic",
+   "folded": {
+    "code": false,
+    "result": false
+   },
+   "result": {
+    "body": "secret: secret\ngrant_types: [basic]\nid: basic?_pretty=trueRun REST Console\nresourceType: Client\nmeta: {lastUpdated: '2021-08-09T16:21:54.092896Z', createdAt: '2021-08-09T16:21:54.092896Z', versionId: '42'}\n",
+    "status": 201,
+    "headers": {
+     "etag": "42",
+     "location": "/Client/basic?_pretty=trueRun REST Console/_history/42",
+     "x-duration": 20,
+     "content-type": "text/yaml",
+     "x-request-id": "a8d2c41a-19ae-46ab-ae96-d53f773f890e",
+     "cache-control": "no-cache",
+     "last-modified": "Mon, 09 Aug 2021 16:21:54 GMT"
+    }
+   }
+  },
+  {
+   "id": "2a697363-1a3d-4893-9020-668301df2f76",
+   "type": "markdown",
+   "value": "Let's create AccessPolicy for this Client",
+   "folded": {
+    "code": true,
+    "result": false
+   },
+   "result": "
+Let's create AccessPolicy for this Client
+
+"
+  },
+  {
+   "id": "8861d04c-499e-44ee-80a8-e74df187a701",
+   "type": "rest",
+   "value": "PUT AccessPolicy/basic-policy?_pretty=true\ncontent-type: text/yaml\naccept: text/yaml\n\nengine: allow\nlink:\n  - id: basic\n    resourceType: Client",
+   "folded": {
+    "code": false,
+    "result": false
+   },
+   "result": {
+    "body": "link:\n- {id: basic, resourceType: Client}\nengine: allow\nid: basic-policy?_pretty=true\nresourceType: AccessPolicy\nmeta: {lastUpdated: '2021-08-09T16:22:19.851957Z', createdAt: '2021-08-09T16:22:19.851957Z', versionId: '43'}\n",
+    "status": 201,
+    "headers": {
+     "etag": "43",
+     "location": "/AccessPolicy/basic-policy?_pretty=true/_history/43",
+     "x-duration": 8,
+     "content-type": "text/yaml",
+     "x-request-id": "1a64c9fd-2df8-4348-93a4-1bdacca13543",
+     "cache-control": "no-cache",
+     "last-modified": "Mon, 09 Aug 2021 16:22:19 GMT"
+    }
+   }
+  },
+  {
+   "id": "c25c0022-3480-4d20-bcec-20c337588d23",
+   "type": "rest",
+   "value": "GET /Patient\nAuthorization: Basic YmFzaWM6c2VjcmV0",
+   "folded": {
+    "code": false,
+    "result": false
+   },
+   "result": {
+    "body": "{\"query-time\":1,\"meta\":{\"versionId\":\"43\"},\"type\":\"searchset\",\"resourceType\":\"Bundle\",\"total\":0,\"link\":[{\"relation\":\"first\",\"url\":\"/Patient?page=1\"},{\"relation\":\"self\",\"url\":\"/Patient?page=1\"}],\"query-timeout\":60000,\"entry\":[],\"query-sql\":[\"SELECT \\\"patient\\\".* FROM \\\"patient\\\" LIMIT ? OFFSET ? \",100,0]}",
+    "status": 200,
+    "headers": {
+     "etag": "43",
+     "x-duration": 4,
+     "content-type": "application/json",
+     "x-request-id": "6e64a263-3f25-4348-871f-9e2f29a816cc"
+    }
+   }
+  }
+ ]
+}
+
