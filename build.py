@@ -10,7 +10,7 @@ def parse_notebook(file, base):
     with open(f"{base}/{file}", 'r') as f:
         notebook = json.load(f)
         name = notebook['name'] if 'name' in notebook else None
-        description = j['description'] if 'description' in notebook else None
+        description = notebook['description'] if 'description' in notebook else None
         uri = f"{BASE_URI}/{file}"
         
         return {
