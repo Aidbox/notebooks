@@ -4,7 +4,7 @@
 import os, sys
 import json
 
-BASE_URI = 'https://aidbox.github.io/notebooks'
+BASE_URI = 'https://aidbox.github.io/notebooks/notebooks'
 
 def parse_notebook(file, base):
     with open(f"{base}/{file}", 'r') as f:
