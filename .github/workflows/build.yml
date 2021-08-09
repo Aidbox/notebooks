@@ -6,6 +6,8 @@ jobs:
     steps:
       - name: "Check out"
         uses: actions/checkout@v2
+        with:
+          ref: master
       - name: Generate index.json
         run: ./build.py index.json
       - name: Commit files
