@@ -8,10 +8,9 @@ BASE_URI = 'https://aidbox.github.io/notebooks'
 
 def parse_notebook(file, base):
     with open(f"{base}/{file}", 'r') as f:
-        j = json.load(f)
-        res = {}
-        name = j['name'] if 'name' in j else None
-        description = j['description'] if 'description' in j else None
+        notebook = json.load(f)
+        name = notebook['name'] if 'name' in notebook else None
+        description = j['description'] if 'description' in notebook else None
         uri = f"{BASE_URI}/{file}"
         
         return {
@@ -29,14 +28,13 @@ def parse_notebook(file, base):
 
 
 def parse_files(base):
-    lst = list(os.listdir(base))
-    notebooks = [parse_notebook(file, base) for file in lst]
+    files = list(os.listdir(base))
+    notebooks = [parse_notebook(file, base) for file in files]
     return {'version': 1,
             'notebooks': notebooks}
 
 
 def main():
-    lst = list(os.listdir('./notebooks'))
     if len(sys.argv) == 2:
         with open(sys.argv[1], 'w') as f:
             json.dump(parse_files('./notebooks'), f)
