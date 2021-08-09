@@ -9,12 +9,20 @@ jobs:
       - name: Generate index.json
         run: ./build.py index.json
       - name: Commit files
+        id: commit
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.json
           git commit -m "Bot: generate index.json"
+          if [[ "`git status --porcelain index.json`" ]]
+            git commit -m "Bot: generate index.json"
+            echo "::set-output name=need-push::true"
+          else
+            echo "::set-output name=need-push::false"
+          fi
       - name: Push changes
+        if: steps.commit.outputs.need-push == true
         uses: ad-m/github-push-action@master
         with:
           branch: ${{ github.ref }}
