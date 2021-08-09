@@ -1,1 +1,1 @@
-{"version": 1, "notebooks": [{"name": null, "description": null, "source": {"type": "uri", "path": "https://aidbox.github.io/notebooks/example.json"}, "tags": {"type": "string_array", "value": ["official"]}}]}
+{"version": 1, "notebooks": [{"name": null, "description": null, "source": {"type": "uri", "path": "https://aidbox.github.io/notebooks/example2.json"}, "tags": {"type": "string_array", "value": ["official"]}}]}
