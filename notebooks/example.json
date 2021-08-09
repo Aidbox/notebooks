@@ -3,7 +3,7 @@
   {
    "id": "cf9cecec-0dd6-42d9-a0f3-7029e6afe94f",
    "type": "rest",
-   "value": "GET /Patient/pt-1",
+   "value": "GET  /Patient/pt-1",
    "folded": {
     "result": false
    },
