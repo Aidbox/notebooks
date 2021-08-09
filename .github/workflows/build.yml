@@ -17,8 +17,10 @@ jobs:
           if [[ "`git status --porcelain index.json`" ]]
           then
             git commit -m "Bot: generate index.json"
+            echo "need push"
             echo "::set-output name=need-push::true"
           else
+            echo "don't need push"
             echo "::set-output name=need-push::false"
           fi
       - name: Push changes
