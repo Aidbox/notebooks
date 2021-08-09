@@ -24,7 +24,7 @@ jobs:
             echo "::set-output name=need-push::false"
           fi
       - name: Push changes
-        if: steps.commit.outputs.need-push == true
+        if: steps.commit.outputs.need-push == 'true'
         uses: ad-m/github-push-action@master
         with:
           branch: ${{ github.ref }}
