@@ -1,0 +1,106 @@
+[
+  {
+    "result": [
+      {
+        "resource": {
+          "name": "Resource Owner Flow",
+          "description": "This notebook designed for resource owner flow"
+          "cells": [
+            {
+              "id": "e3d2d32e-5e48-4b33-9291-bf2c87b1148a",
+              "type": "markdown",
+              "value": "#Resource Owner Flow\nThis flow works for mobile and desktop apps.\n\nBefore you start - create a Client and User",
+              "folded": {
+                "code": true,
+                "result": false
+              },
+              "result": "<h1>Resource Owner Flow</h1><p>This flow works for mobile and desktop apps.</p><p>Before you start - create a Client and User</p>"
+            },
+            {
+              "id": "c5a3b3eb-5cd8-4d36-bd0d-d5e3035c1595",
+              "type": "rest",
+              "value": "PUT Client/password-client?_pretty=true\ncontent-type: text/yaml\naccept: text/yaml\n\nsecret: verysecret\ngrant_types:\n  - password",
+              "folded": {
+                "code": true,
+                "result": false
+              },
+              "result": {
+                "body": "secret: verysecret\ngrant_types: [password]\nid: password-client?_pretty=true\nresourceType: Client\nmeta: {lastUpdated: '2021-08-10T15:19:10.428810Z', createdAt: '2021-08-10T15:19:10.428810Z', versionId: '75'}\n",
+                "status": 201,
+                "headers": {
+                  "etag": "75",
+                  "location": "/Client/password-client?_pretty=true/_history/75",
+                  "x-duration": 23,
+                  "content-type": "text/yaml",
+                  "x-request-id": "630eebb5-4a6b-41f4-8305-043ae27487a9",
+                  "cache-control": "no-cache",
+                  "last-modified": "Tue, 10 Aug 2021 15:19:10 GMT"
+                }
+              }
+            },
+            {
+              "id": "be718476-5133-4723-9112-1686f38c0fe8",
+              "type": "rest",
+              "value": "PUT User/user-1?_pretty=true\n\ncontent-type: text/yaml\naccept: text/yaml\n\nemail: user@mail.com\npassword: password",
+              "folded": {
+                "code": true,
+                "result": false
+              },
+              "result": {
+                "body": "{\"id\":\"user-1?_pretty=true\",\"resourceType\":\"User\",\"meta\":{\"lastUpdated\":\"2021-08-10T15:19:30.218560Z\",\"createdAt\":\"2021-08-10T15:19:30.218560Z\",\"versionId\":\"76\"}}",
+                "status": 201,
+                "headers": {
+                  "etag": "76",
+                  "location": "/User/user-1?_pretty=true/_history/76",
+                  "x-duration": 4,
+                  "content-type": "application/json",
+                  "x-request-id": "6f0684c0-9e27-4303-a7b6-01ad3dd6eba8",
+                  "cache-control": "no-cache",
+                  "last-modified": "Tue, 10 Aug 2021 15:19:30 GMT"
+                }
+              }
+            },
+            {
+              "id": "84fbaf7d-3bd8-4c0b-bde1-06504297bf0e",
+              "type": "rest",
+              "value": "POST /auth/tokenGet Access Token\n\nContent-Type: application/json\n{\n \"client_id\": \"password-client\",\n \"grant_type\": \"password\",\n \"username\": \"user@mail.com\",\n \"password\": \"password\"\n}",
+              "folded": {
+                "result": false
+              },
+              "result": {
+                "body": "{\"resourceType\":\"OperationOutcome\",\"text\":{\"div\":\"POST /auth/tokenGet Access Token not found\"},\"issue\":[{\"severity\":\"error\",\"code\":\"not-found\",\"details\":{\"text\":\"POST /auth/tokenGet Access Token not found\"}}]}",
+                "status": 404,
+                "headers": {
+                  "x-duration": 0,
+                  "content-type": "application/json",
+                  "x-request-id": "00323c0f-25a8-4571-b6cd-6e4fe95bbf0a"
+                }
+              }
+            },
+            {
+              "id": "6cf22bbd-6536-4df2-8a4c-c68482df28cb",
+              "type": "rest",
+              "value": "GET /Patient",
+              "folded": {
+                "result": false
+              },
+              "result": {
+                "body": "{\"query-time\":12,\"meta\":{\"versionId\":\"76\"},\"type\":\"searchset\",\"resourceType\":\"Bundle\",\"total\":0,\"link\":[{\"relation\":\"first\",\"url\":\"/Patient?page=1\"},{\"relation\":\"self\",\"url\":\"/Patient?page=1\"}],\"query-timeout\":60000,\"entry\":[],\"query-sql\":[\"SELECT \\\"patient\\\".* FROM \\\"patient\\\" LIMIT ? OFFSET ? \",100,0]}",
+                "status": 200,
+                "headers": {
+                  "etag": "76",
+                  "x-duration": 13,
+                  "content-type": "application/json",
+                  "x-request-id": "4c9d44d6-2e1d-46cf-b17d-bb83b70309a8"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "duration": 1,
+    "status": "success",
+    "query": "select resource from notebook where id = 'de549150-962c-4b0d-b86d-eb8c2d53261c'"
+  }
+]
