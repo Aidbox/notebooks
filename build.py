@@ -11,6 +11,7 @@ def parse_notebook(file, base):
         notebook = json.load(f)
         name = notebook['name'] if 'name' in notebook else None
         description = notebook['description'] if 'description' in notebook else None
+        tags = notebook['tags'] if 'tags' in notebook else []
         uri = f"{BASE_URI}/{file}"
         
         return {
@@ -22,7 +23,7 @@ def parse_notebook(file, base):
             },
             'tags': {
                 'type': 'string_array',
-                'value': ['official']
+                'value': ['official'] + tags
             }
         }
 
