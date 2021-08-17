@@ -2,24 +2,14 @@
   "name": "Database Operations Notebook",
   "cells": [
     {
-      "id": "71e96d7d-5ecb-47c6-9b47-4c01a29a169d",
+      "id": "44ad53ac-4ea1-4256-b42d-8f0739b4bd53",
       "type": "markdown",
-      "value": "#DB Notebook All-Snippets in One",
+      "value": "### Job Statuses",
       "folded": {
         "code": true,
         "result": false
       },
-      "result": "<h1>DB Notebook All-Snippets in One</h1>"
-    },
-    {
-      "id": "44ad53ac-4ea1-4256-b42d-8f0739b4bd53",
-      "type": "markdown",
-      "value": "Jobs Statuses",
-      "folded": {
-        "code": false,
-        "result": true
-      },
-      "result": "<p>Jobs Statuses</p>"
+      "result": "<h3>Job Statuses</h3>"
     },
     {
       "id": "f1bc26d3-e165-49fd-83b4-32b06d3d1b63",
@@ -39,11 +29,12 @@
     {
       "id": "c4779447-cf90-4d36-8a13-ee6681fc9d18",
       "type": "markdown",
-      "value": "Open Sessions\n",
+      "value": "### Open Sessions",
       "folded": {
-        "result": true
+        "code": true,
+        "result": false
       },
-      "result": "<p>Open Sessions</p>"
+      "result": "<h3>Open Sessions</h3>"
     },
     {
       "id": "57ea6f93-fa01-438d-a145-cb09b84f698f",
@@ -67,11 +58,12 @@
     {
       "id": "84692a44-efa4-4285-aea6-47b6a92db821",
       "type": "markdown",
-      "value": "Long queries",
+      "value": "### Long queries",
       "folded": {
-        "result": true
+        "code": true,
+        "result": false
       },
-      "result": "<p>Long queries</p>"
+      "result": "<h3>Long queries</h3>"
     },
     {
       "id": "5c0c2ecc-a343-4052-9a8a-4513a9b91a3e",
@@ -110,11 +102,12 @@
     {
       "id": "c3c5d82c-ab33-4e64-9fd5-f337066a339b",
       "type": "markdown",
-      "value": "Replica Lag",
+      "value": "### Replica Lag",
       "folded": {
-        "result": true
+        "code": true,
+        "result": false
       },
-      "result": "<p>Replica Lag</p>"
+      "result": "<h3>Replica Lag</h3>"
     },
     {
       "id": "0a490872-7fdc-4b0b-9d66-daae6f36af82",
@@ -136,11 +129,12 @@
     {
       "id": "48cd3db2-018b-4212-9f3b-cd63b6814a32",
       "type": "markdown",
-      "value": "Table Sizes",
+      "value": "### Table Sizes",
       "folded": {
-        "result": true
+        "code": true,
+        "result": false
       },
-      "result": "<p>Table Sizes</p>"
+      "result": "<h3>Table Sizes</h3>"
     },
     {
       "id": "903a06f5-8697-4a7b-8e04-96a713abd69d",
@@ -4133,11 +4127,12 @@
     {
       "id": "ebf4e9c9-387b-496c-b613-f67228f642fe",
       "type": "markdown",
-      "value": "Time Since The Last Start Of Auto-Vacuum",
+      "value": "### Time Since The Last Start Of Auto-Vacuum",
       "folded": {
-        "result": true
+        "code": true,
+        "result": false
       },
-      "result": "<p>Time Since The Last Start Of Auto-Vacuum</p>"
+      "result": "<h3>Time Since The Last Start Of Auto-Vacuum</h3>"
     },
     {
       "id": "d8289949-2a70-4abf-abd4-14db56dbf38e",
@@ -4163,9 +4158,9 @@
   "id": "574541d6-ed58-4f8b-b77d-3667c2c525a3",
   "resourceType": "Notebook",
   "meta": {
-    "lastUpdated": "2021-08-17T10:02:37.525776Z",
-    "createdAt": "2021-08-17T10:01:49.494266Z",
-    "versionId": "14"
+    "lastUpdated": "2021-08-17T14:49:36.112868Z",
+    "createdAt": "2021-08-17T14:49:36.112868Z",
+    "versionId": "856"
   },
   "tags": [
     "db"
