@@ -1,1 +1,0 @@
-{"name":"Replica Lag","tags":["db"],"cells":[{"id":"ac46229d-988b-42ce-a278-65b255d147fd","type":"sql","value":"select extract(epoch from replay_lag) from pg_stat_replication;"}],"id":"9522ae4e-d393-4b36-ac8a-9d2b7ef9420b","resourceType":"Notebook","meta":{"lastUpdated":"2021-08-12T12:44:55.697501Z","createdAt":"2021-08-12T12:44:55.697501Z","versionId":"592"}}
