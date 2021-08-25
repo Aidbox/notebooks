@@ -1,0 +1,23 @@
+E|--5
+B|--7
+G|--6
+D|--5
+A|--7
+E|--5
+
+E|--0
+B|--8
+G|--0
+D|--0
+A|--8
+E|--8
+
+Restrict access from those who no longer use certain applications or services.
+
+Implicit flow - everything happens in the browser, on the front channel. Common in single page applications (SPAs).
+
+Authorization Code flow - the front channel is used to get an authorization code. The back channel is used by the client application to exchange the authorization code for an access token (and optionally a refresh token). This is the gold standard of OAuth flows.
+
+Client Credentials flow - often used for server-to-server and service account scenarios. It's a back channel only flow to obtain an access token using the client's credentials. It differs from most of the other flows in that there is no user involved.
+
+Resource Owner Password flow - a legacy flow that allows you to pass a username and password to the authorization server. Only recommended when you have old-school clients to accommodate.
